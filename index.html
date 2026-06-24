@@ -1,19 +1,613 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Dr. Zafir Ahmad Naik</title>
-    <link rel="stylesheet" href="style.css">
-</head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dr. Zafir Ahmad Naik — Geneticist &amp; Plant Breeder</title>
+<meta name="description" content="Portfolio of Dr. Zafir Ahmad Naik — Ph.D. Genetics & Plant Breeding, GWAS researcher in temperate rice, founder of Data Harvest Labs.">
 
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300..900&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css">
+</head>
 <body>
 
-<h1>Dr. Zafir Ahmad Naik</h1>
+<!-- ===== Progress / scroll indicator ===== -->
+<div class="scroll-progress" id="scrollProgress"></div>
 
-<p>PhD Genetics & Plant Breeding</p>
+<!-- ===== Nav ===== -->
+<header class="site-header" id="siteHeader">
+  <div class="nav-inner">
+    <a class="nav-brand" href="#home">
+      <span class="brand-mark">ZAN</span>
+      <span class="brand-divider">·</span>
+      <span class="brand-tag">Genetics &amp; Plant Breeding</span>
+    </a>
 
-<p>Bioinformatics | Data Science | GWAS</p>
+    <nav class="nav-links" id="navLinks">
+      <a href="#about" class="nav-link">About</a>
+      <a href="#education" class="nav-link">Education</a>
+      <a href="#research" class="nav-link">Research</a>
+      <a href="#publications" class="nav-link">Publications</a>
+      <a href="#projects" class="nav-link">Projects</a>
+      <a href="#skills" class="nav-link">Skills</a>
+      <a href="#achievements" class="nav-link">Achievements</a>
+      <a href="#contact" class="nav-link">Contact</a>
+    </nav>
 
-<a href="#">Download CV</a>
+    <a href="cv/Zafir_Ahmad_Naik_CV.pdf" download class="btn btn-ghost nav-cta">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12m0 0l-4-4m4 4l4-4M5 19h14"/></svg>
+      Résumé
+    </a>
 
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<main>
+
+<!-- ===== HERO ===== -->
+<section class="hero" id="home">
+  <canvas class="hero-canvas" id="manhattanPlot" aria-hidden="true"></canvas>
+  <div class="hero-grain" aria-hidden="true"></div>
+
+  <div class="container hero-inner">
+    <p class="eyebrow eyebrow-light"><span class="locus-tag">LOCUS&nbsp;00</span> Doctoral Researcher · SKUAST&#8209;Kashmir</p>
+
+    <h1 class="hero-title">
+      Zafir Ahmad Naik
+    </h1>
+
+    <p class="hero-role">Genetics &amp; Plant Breeding — mapping the loci behind a better harvest.</p>
+
+    <p class="hero-summary">
+      Ph.D. candidate dissecting the genome-wide architecture of yield in temperate rice, with a parallel
+      practice in statistical consulting and open-source research tooling across agricultural,
+      clinical, and biological data. Based in Srinagar, Kashmir.
+    </p>
+
+    <div class="hero-actions">
+      <a href="#contact" class="btn btn-primary">Get in touch</a>
+      <a href="#publications" class="btn btn-outline">View publications</a>
+    </div>
+
+    <div class="hero-stats" id="heroStats">
+      <div class="stat" data-count="14" data-suffix="+">
+        <span class="stat-num">0</span><span class="stat-label">Publications</span>
+      </div>
+      <div class="stat" data-count="4">
+        <span class="stat-num">0</span><span class="stat-label">OSS R/Shiny Tools</span>
+      </div>
+      <div class="stat" data-count="1">
+        <span class="stat-num">0</span><span class="stat-label">Patent Filed</span>
+      </div>
+      <div class="stat" data-count="6">
+        <span class="stat-num">0</span><span class="stat-label">Years in Research</span>
+      </div>
+    </div>
+
+    <a href="#about" class="scroll-cue" aria-label="Scroll to About">
+      <span></span>
+    </a>
+  </div>
+</section>
+
+<!-- ===== ABOUT ===== -->
+<section class="section" id="about">
+  <div class="container">
+    <p class="eyebrow"><span class="locus-tag">LOCUS&nbsp;01</span> About</p>
+    <h2 class="section-title">Plant geneticist, statistician, builder of tools.</h2>
+
+    <div class="about-grid">
+      <div class="about-copy">
+        <p>
+          I'm a Ph.D. candidate in Genetics &amp; Plant Breeding at <strong>SKUAST&#8209;Kashmir</strong>,
+          completing my thesis on genome&#8209;wide association studies (GWAS) for yield and
+          yield&#8209;attributing traits in temperate rice. My work sits at the intersection of
+          quantitative genetics, population genomics, and applied statistics — translating dense
+          marker&#8209;trait data into breeding decisions that hold up in the field.
+        </p>
+        <p>
+          Alongside my doctoral research, I run <strong>Data Harvest Labs</strong>, an MSME&#8209;registered
+          analytics practice delivering bioinformatics, biostatistics, and data science support to
+          researchers across agricultural, medical, veterinary, and life&#8209;science disciplines. I also
+          serve as a Research Analyst at Cashmir Biotech Pvt. Ltd. I write R packages and Shiny
+          applications that turn multi&#8209;step statistical pipelines — GWAS summary mapping, MET
+          stability analysis, PCA — into single&#8209;click tools other researchers can actually use.
+        </p>
+        <p>
+          My broader research footprint spans diversity analysis in rice, oats, and common bean;
+          root phenomics in buckwheat; nutritional genomics and biofortification (Vit&#8209;GWAS, Fe/Zn
+          dynamics); plant–microbe interactions; and reactive&#8209;oxygen&#8209;species stress physiology —
+          reflected across 14+ publications, a filed patent on an apple&#8209;scab biocontrol agent, and
+          ongoing peer review for journals including <em>BMC Biology</em>.
+        </p>
+      </div>
+
+      <div class="about-card">
+        <div class="about-card-row">
+          <span class="about-card-label">Location</span>
+          <span class="about-card-value">Srinagar, Jammu &amp; Kashmir, India</span>
+        </div>
+        <div class="about-card-row">
+          <span class="about-card-label">Focus</span>
+          <span class="about-card-value">GWAS · Quantitative Genetics · Biostatistics</span>
+        </div>
+        <div class="about-card-row">
+          <span class="about-card-label">Languages</span>
+          <span class="about-card-value">English, Urdu, Hindi, Kashmiri, Arabic (elem.)</span>
+        </div>
+        <div class="about-card-row">
+          <span class="about-card-label">Currently</span>
+          <span class="about-card-value">Doctoral Researcher &amp; Research Analyst</span>
+        </div>
+        <div class="about-card-links">
+          <a href="https://www.linkedin.com/in/zafir-naik/" target="_blank" rel="noopener">LinkedIn</a>
+          <a href="https://scholar.google.com/citations?user=VuIrALwAAAAJ&hl=en&authuser=1" target="_blank" rel="noopener">Google Scholar</a>
+          <a href="https://www.researchgate.net/profile/Zafir-Naik-2" target="_blank" rel="noopener">ResearchGate</a>
+          <a href="https://orcid.org/0009-0001-9798-7993" target="_blank" rel="noopener">ORCID</a>
+          <a href="https://github.com/zaff198" target="_blank" rel="noopener">GitHub</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== EDUCATION ===== -->
+<section class="section section-alt" id="education">
+  <div class="container">
+    <p class="eyebrow"><span class="locus-tag">LOCUS&nbsp;02</span> Education</p>
+    <h2 class="section-title">Academic record</h2>
+
+    <div class="timeline">
+
+      <div class="timeline-item">
+        <div class="timeline-marker"></div>
+        <div class="timeline-content card">
+          <div class="card-top">
+            <span class="card-degree">Ph.D. · Genetics &amp; Plant Breeding</span>
+            <span class="card-dates">May 2022 — Sep 2025</span>
+          </div>
+          <p class="card-org">Sher-e-Kashmir University of Agricultural Sciences &amp; Technology of Kashmir (SKUAST&#8209;K)</p>
+          <p class="card-detail"><strong>Thesis:</strong> Genome-wide Association Studies (GWAS) for Yield and Yield Attributing Traits in Temperate Rice (<em>Oryza sativa</em>)</p>
+          <p class="card-detail"><strong>Advisor:</strong> Dr. Najeeb ul Rehman Sofi &nbsp;·&nbsp; <strong>GPA:</strong> 8.31 / 10</p>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-marker"></div>
+        <div class="timeline-content card">
+          <div class="card-top">
+            <span class="card-degree">M.Sc. · Genetics &amp; Plant Breeding</span>
+            <span class="card-dates">Aug 2019 — Mar 2022</span>
+          </div>
+          <p class="card-org">SKUAST&#8209;Kashmir</p>
+          <p class="card-detail"><strong>Thesis:</strong> Variation for Agronomic and Quantitative Traits in Oats (<em>Avena sativa</em> L.)</p>
+          <p class="card-detail"><strong>Advisor:</strong> Dr. Noor Ul Saleem Khuroo &nbsp;·&nbsp; <strong>GPA:</strong> 7.92 / 10</p>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-marker"></div>
+        <div class="timeline-content card">
+          <div class="card-top">
+            <span class="card-degree">B.Sc. (Hons) · Agricultural Sciences</span>
+            <span class="card-dates">Aug 2015 — Jul 2019</span>
+          </div>
+          <p class="card-org">SKUAST&#8209;Jammu</p>
+          <p class="card-detail"><strong>GPA:</strong> 6.98 / 10</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===== RESEARCH EXPERIENCE ===== -->
+<section class="section" id="research">
+  <div class="container">
+    <p class="eyebrow"><span class="locus-tag">LOCUS&nbsp;03</span> Research Experience</p>
+    <h2 class="section-title">Where the work has taken me</h2>
+
+    <div class="exp-grid">
+
+      <div class="exp-card card">
+        <div class="exp-card-head">
+          <h3>Founder &amp; Research Analyst</h3>
+          <span class="exp-period">May 2020 — Present</span>
+        </div>
+        <p class="exp-org">Data Harvest Labs (MSME Registered) — <a href="https://www.dataharvestlabs.com/" target="_blank" rel="noopener">dataharvestlabs.com</a></p>
+        <p>
+          Freelance research analytics company delivering statistical, bioinformatics, and data
+          science solutions across agricultural, medical, veterinary, and life-science disciplines.
+          Build customized R/Python pipelines and interactive Shiny applications for GWAS, clinical
+          data analysis, quantitative genetics, experimental design, multivariate statistics, machine
+          learning, and omics analysis — partnering with researchers worldwide on study design,
+          visualization, and manuscript preparation.
+        </p>
+      </div>
+
+      <div class="exp-card card">
+        <div class="exp-card-head">
+          <h3>Interdisciplinary Research Contributions</h3>
+          <span class="exp-period">Ongoing</span>
+        </div>
+        <p class="exp-org">Plant Science · Genomics · Biometrics</p>
+        <ul class="exp-list">
+          <li>GWAS, quantitative genetics &amp; population genomics for yield, nutritional, and stress traits in rice and buckwheat</li>
+          <li>Genetic diversity &amp; multivariate characterization of rice, oats, and common bean germplasm</li>
+          <li>Root phenomics and root system architecture analysis in buckwheat</li>
+          <li>Nutritional genomics and biofortification — Vit-GWAS, Fe/Zn dynamics</li>
+          <li>ROS detoxification mechanisms under abiotic stress</li>
+          <li>Plant–microbe interactions and cultivar-specific endophytic microbiomes</li>
+          <li>Secondary metabolite profiling and biochemical characterization</li>
+          <li>Reproducible computational pipelines — custom R scripts &amp; Shiny apps</li>
+        </ul>
+      </div>
+
+      <div class="exp-card card">
+        <div class="exp-card-head">
+          <h3>International Intern — Bioinformatics &amp; Genomics</h3>
+          <span class="exp-period">Jan 2026</span>
+        </div>
+        <p class="exp-org">Nextgenhelper, New Delhi</p>
+        <p>One-month intensive training in Bioinformatics, Genomics, and Biostatistics — basics through advanced genomic data analysis and statistical processing.</p>
+      </div>
+
+      <div class="exp-card card">
+        <div class="exp-card-head">
+          <h3>Rural Agriculture Work Experience (R.A.W.E.)</h3>
+          <span class="exp-period">2018 · 6 months</span>
+        </div>
+        <p class="exp-org">SKUAST-Jammu &amp; Kanwal Foods &amp; Spices, EPIP SIDCO</p>
+        <p>Village attachment and hands-on training at research stations, KVKs, and agri-clinics with project report preparation; food processing, preservation, and production-report analysis.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===== PUBLICATIONS ===== -->
+<section class="section section-alt" id="publications">
+  <div class="container">
+    <p class="eyebrow"><span class="locus-tag">LOCUS&nbsp;04</span> Publications</p>
+    <h2 class="section-title">Peer-reviewed &amp; published work</h2>
+    <p class="section-lede">14+ publications spanning Scopus-indexed journals, UGC-CARE/NAAS-listed work, and three book chapters.</p>
+
+    <div class="filter-bar" id="pubFilters">
+      <button class="filter-btn is-active" data-filter="all">All</button>
+      <button class="filter-btn" data-filter="scopus">Scopus Indexed</button>
+      <button class="filter-btn" data-filter="ugc">UGC-CARE / NAAS</button>
+      <button class="filter-btn" data-filter="other">Other</button>
+      <button class="filter-btn" data-filter="book">Book Chapters</button>
+    </div>
+
+    <div class="pub-list" id="pubList">
+
+      <article class="pub-item" data-cat="scopus">
+        <span class="pub-tag">Scopus</span>
+        <p class="pub-citation"><strong>Naik, Z.A.</strong>, Mansoor, M., Sofi, P.A., Dar, Z.A., Mehvish, S., &amp; Khuroo, N.U.S. (2025). Genetic diversity and yield-biochemical trait correlations in oats from the Northwestern Himalayas. <em>Genetic Resources and Crop Evolution</em>, 1–15.</p>
+      </article>
+
+      <article class="pub-item" data-cat="scopus">
+        <span class="pub-tag">Scopus</span>
+        <p class="pub-citation">Naik, M., &amp; <strong>Naik, Z.A.</strong> (2025). Enhancing plant resilience: mechanisms and genetic strategies for detoxification of reactive oxygen species. <em>Proceedings of the Indian National Science Academy</em>, 1–7.</p>
+      </article>
+
+      <article class="pub-item" data-cat="scopus">
+        <span class="pub-tag">Scopus</span>
+        <p class="pub-citation">Singh, D., Sudan, J., Zaffar, A., <strong>Naik, Z.</strong>, Bhat, M.A., Shikari, A.B., et al. (2024). Comparative root phenotyping unveils key insights into the root system architecture of buckwheat (<em>Fagopyrum</em> sp.). <em>Discover Agriculture</em>, 2(1), 88.</p>
+      </article>
+
+      <article class="pub-item" data-cat="scopus">
+        <span class="pub-tag">Scopus</span>
+        <p class="pub-citation">Sudan, J., Urwat, U., Farooq, A., Pakhtoon, M.M., Zaffar, A., <strong>Naik, Z.A.</strong>, et al. (2023). Explicating genetic architecture governing nutritional quality in pigmented rice. <em>PeerJ</em>, 11, e15901.</p>
+      </article>
+
+      <article class="pub-item" data-cat="scopus">
+        <span class="pub-tag">Scopus</span>
+        <p class="pub-citation">Verma, A., Sudan, J., Jose, R.C., Bagri, J., <strong>Naik, Z.A.</strong>, Sofi, N.R., et al. (2025). Unveiling molecular mechanisms of iron and zinc dynamics in rice. <em>Plant Science</em>, 357, 112543.</p>
+      </article>
+
+      <article class="pub-item" data-cat="scopus">
+        <span class="pub-tag">Scopus</span>
+        <p class="pub-citation">Jan, S., Ashraf Bhat, M., Kumar, A., Altaf Wani, M., Ahmad Bhat, F., Kanth, R.H., et al. (2025). Plants' response to different abiotic stresses. <em>Journal of Crop Health</em>, 77(5), 1–27.</p>
+      </article>
+
+      <article class="pub-item" data-cat="scopus">
+        <span class="pub-tag">Scopus</span>
+        <p class="pub-citation">Manzoor, M., Hami, A., Sudan, J., Dall'Acqua, S., Bhat, B., Zafar, A., <strong>Naik, Z.A.</strong>, et al. (2025). Vitamin-B profiling and Vit-GWAS in buckwheat (<em>Fagopyrum</em> spp.): a first report. <em>Physiology and Molecular Biology of Plants</em>.</p>
+      </article>
+
+      <article class="pub-item" data-cat="scopus">
+        <span class="pub-tag">Scopus</span>
+        <p class="pub-citation">Sofi, N.R., Dar, M.S., Mir, S., Shikari, A.B., Bharadwaj, N., Aditya, J.P., et al. (2026). Multi-environment analysis of rice (<em>Oryza sativa</em> L.) genotypes under Indian hill ecologies. <em>Indian Journal of Genetics and Plant Breeding</em>, 1–12.</p>
+      </article>
+
+      <article class="pub-item" data-cat="ugc">
+        <span class="pub-tag pub-tag-alt">UGC-CARE / NAAS</span>
+        <p class="pub-citation"><strong>Naik, Z.A.</strong>, Verma, A., Sudan, J., Shikari, A.B., Bhat, F.A., Wani, F.J., et al. (2025). Multivariate analysis of morphological and biochemical traits revealed promising pigmented rice genotypes of the North Western Himalayas for future breeding programs. <em>Indian Journal of Plant Genetic Resources</em>, 38(2), 227–231.</p>
+      </article>
+
+      <article class="pub-item" data-cat="ugc">
+        <span class="pub-tag pub-tag-alt">UGC-CARE / NAAS</span>
+        <p class="pub-citation">Naik, M., <strong>Naik, Z.</strong>, Mehraj, S., Malla, I.A., Bhat, J.I.A., Bhat, Z., et al. (2025). Endophytic microbiota of diverse apple cultivars reveals cultivar-specific microbial associations. <em>Journal of Advances in Biology &amp; Biotechnology</em>, 28(4), 808–818.</p>
+      </article>
+
+      <article class="pub-item" data-cat="other">
+        <span class="pub-tag pub-tag-muted">Other</span>
+        <p class="pub-citation">Wani, S.Q., Wani, T.A., Rasool, T., Muneer, K., Mansoor, T., <strong>Naik, Z.A.</strong>, et al. (2023). Evolutionary context of fungicide resistance: a comprehensive review. <em>The Pharma Innovation International Journal</em>, 12(6), 292–296.</p>
+      </article>
+
+      <article class="pub-item" data-cat="other">
+        <span class="pub-tag pub-tag-muted">Other</span>
+        <p class="pub-citation">Jan, U., Afroza, B., Rashid, R., Sofi, P.A., <strong>Naik, Z.A.</strong>, &amp; Manzoor, I. (2025). Performance evaluation and diversity analysis in common bean (<em>Phaseolus vulgaris</em> L.) germplasm. <em>Journal of Community Mobilization and Sustainable Development</em>, 20(1), 63–68.</p>
+      </article>
+
+      <article class="pub-item" data-cat="other">
+        <span class="pub-tag pub-tag-muted">Other</span>
+        <p class="pub-citation">Jan, H., Kumar, A., Mapnoo, N.L.A., Verma, L., <strong>Naik, Z.</strong>, Sofi, N.R., et al. (2025). Unravelling the genetic variability in rice germplasm under temperate conditions of Kashmir valley. <em>AATCC Journal</em>, 2025(1), 171–174.</p>
+      </article>
+
+      <article class="pub-item" data-cat="other">
+        <span class="pub-tag pub-tag-muted">Other</span>
+        <p class="pub-citation">Pakhtoon, M.M., Agrawal, A., Sudan, J., Mahajan, R., <strong>Naik, Z.</strong>, Manzoor, M., Sofi, P.A., &amp; Zargar, S.M. (2025). Evaluation of secondary metabolite profiles in common bean (<em>Phaseolus vulgaris</em> L.) genotypes from the Western Himalayan Kashmir. <em>SKUAST Journal of Research</em>, 27(2).</p>
+      </article>
+
+      <article class="pub-item" data-cat="book">
+        <span class="pub-tag pub-tag-gold">Book Chapter</span>
+        <p class="pub-citation"><strong>Naik, Z.A.</strong>, Mansoor, M., Verma, A., Naik, M., Hajini, M.A., Abeer, Sofi, P.A., Zargar, S.M., &amp; Sofi, N.U.R. (2026). Multi-omics approach for drought resistance in rice. In <em>Rice Omics and Precision Breeding: Advances in Sustainable Production</em>. Apple Academic Press.</p>
+      </article>
+
+      <article class="pub-item" data-cat="book">
+        <span class="pub-tag pub-tag-gold">Book Chapter</span>
+        <p class="pub-citation"><strong>Naik, Z.A.</strong>, Madeeha, Bhat, S.N., Dar, M.S., &amp; Wani, S.H. (2025). Genomic methods for improving abiotic stress tolerance in crops. In <em>Fruit Breeding: A Genomic Approach</em> (pp. 241–265). Agrobios Research.</p>
+      </article>
+
+      <article class="pub-item" data-cat="book">
+        <span class="pub-tag pub-tag-gold">Book Chapter</span>
+        <p class="pub-citation">Madeeha, <strong>Naik, Z.A.</strong>, &amp; Jan, U. (2024). Embryo rescue in horticultural crops. In <em>Theory and Guide to Plant Tissue Culture in Horticultural Crops</em> (pp. 67–83). Narendra Publishing House.</p>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===== SOFTWARE PROJECTS ===== -->
+<section class="section" id="projects">
+  <div class="container">
+    <p class="eyebrow"><span class="locus-tag">LOCUS&nbsp;05</span> Software Projects</p>
+    <h2 class="section-title">Open-source R &amp; Shiny tools</h2>
+    <p class="section-lede">Pipelines that turn multi-step statistical workflows into single-click tools.</p>
+
+    <div class="project-grid">
+
+      <div class="project-card card">
+        <div class="project-icon">QTL</div>
+        <h3>PutativeQTLmapper</h3>
+        <p>Interactive Shiny application for GWAS that dynamically visualizes and maps putative Quantitative Trait Loci directly from complex summary statistics.</p>
+        <div class="tag-row">
+          <span class="tag">R</span><span class="tag">Shiny</span><span class="tag">ggplot2</span><span class="tag">plotly</span>
+        </div>
+        <a href="https://github.com/zaff198" target="_blank" rel="noopener" class="project-link">View on GitHub →</a>
+      </div>
+
+      <div class="project-card card">
+        <div class="project-icon">MET</div>
+        <h3>met-stability-analyzer</h3>
+        <p>End-to-end Shiny pipeline for Multi-Environment Trial analysis — single-click CD, Environment ANOVA, G×E ANOVA, and Eberhart–Russell stability modeling.</p>
+        <div class="tag-row">
+          <span class="tag">R</span><span class="tag">Shiny</span><span class="tag">dplyr</span><span class="tag">DT</span>
+        </div>
+        <a href="https://github.com/zaff198" target="_blank" rel="noopener" class="project-link">View on GitHub →</a>
+      </div>
+
+      <div class="project-card card">
+        <div class="project-icon">PCA</div>
+        <h3>ShinyPCA</h3>
+        <p>Interactive Principal Component Analysis dashboard for high-dimensional biological datasets — real-time variance analysis and automated cluster identification.</p>
+        <div class="tag-row">
+          <span class="tag">R</span><span class="tag">Shiny</span><span class="tag">Biostatistics</span>
+        </div>
+        <a href="https://github.com/zaff198" target="_blank" rel="noopener" class="project-link">View on GitHub →</a>
+      </div>
+
+      <div class="project-card card">
+        <div class="project-icon">G×E</div>
+        <h3>E_R Stability Pipeline</h3>
+        <p>Single-click implementation of the Eberhart–Russell regression model for genotype-by-environment interaction analysis, consolidating multi-step computation.</p>
+        <div class="tag-row">
+          <span class="tag">R</span><span class="tag">metan</span><span class="tag">Linear Regression</span>
+        </div>
+        <a href="https://github.com/zaff198" target="_blank" rel="noopener" class="project-link">View on GitHub →</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===== SKILLS ===== -->
+<section class="section section-alt" id="skills">
+  <div class="container">
+    <p class="eyebrow"><span class="locus-tag">LOCUS&nbsp;06</span> Skills</p>
+    <h2 class="section-title">Technical toolkit</h2>
+
+    <div class="skills-grid">
+
+      <div class="skill-block">
+        <h3>Programming</h3>
+        <div class="bar-skill">
+          <div class="bar-skill-head"><span>R</span><span>Proficient</span></div>
+          <div class="bar-track"><div class="bar-fill" data-level="92"></div></div>
+        </div>
+        <div class="bar-skill">
+          <div class="bar-skill-head"><span>Python</span><span>Intermediate</span></div>
+          <div class="bar-track"><div class="bar-fill" data-level="60"></div></div>
+        </div>
+        <div class="bar-skill">
+          <div class="bar-skill-head"><span>Bash / Git</span><span>Working knowledge</span></div>
+          <div class="bar-track"><div class="bar-fill" data-level="55"></div></div>
+        </div>
+        <div class="tag-row tag-row-spaced">
+          <span class="tag tag-mono">tidyverse</span><span class="tag tag-mono">Shiny</span><span class="tag tag-mono">caret</span>
+          <span class="tag tag-mono">lme4</span><span class="tag tag-mono">randomForest</span><span class="tag tag-mono">glmnet</span>
+        </div>
+      </div>
+
+      <div class="skill-block">
+        <h3>Statistics &amp; Genomics</h3>
+        <ul class="check-list">
+          <li>GWAS &amp; QTL mapping</li>
+          <li>Genomic selection &amp; population genomics</li>
+          <li>Mixed linear models (MLM/GLM)</li>
+          <li>Multivariate &amp; high-dimensional data analysis</li>
+          <li>Experimental design &amp; biostatistics</li>
+          <li>Clinical data analysis &amp; hypothesis testing</li>
+        </ul>
+      </div>
+
+      <div class="skill-block">
+        <h3>Laboratory Techniques</h3>
+        <div class="tag-row">
+          <span class="tag">DNA Isolation</span><span class="tag">PCR</span><span class="tag">qPCR</span>
+          <span class="tag">Gel Electrophoresis</span><span class="tag">SDS-PAGE</span><span class="tag">NGS Analysis</span>
+        </div>
+      </div>
+
+      <div class="skill-block">
+        <h3>Software &amp; Platforms</h3>
+        <div class="tag-row">
+          <span class="tag">TASSEL</span><span class="tag">GenAlEx</span><span class="tag">DARwin</span>
+          <span class="tag">MEGA</span><span class="tag">PowerMarker</span><span class="tag">JASP</span>
+          <span class="tag">Git</span><span class="tag">Canva</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===== ACHIEVEMENTS ===== -->
+<section class="section" id="achievements">
+  <div class="container">
+    <p class="eyebrow"><span class="locus-tag">LOCUS&nbsp;07</span> Achievements</p>
+    <h2 class="section-title">Recognition &amp; service</h2>
+
+    <div class="achieve-grid">
+
+      <div class="achieve-card card">
+        <span class="achieve-icon">⚗</span>
+        <h3>Patent — Filed</h3>
+        <p>Antifungal composition for use as a biocontrol agent against apple scab, and method of preparation thereof.</p>
+        <p class="achieve-meta">CBR No. 30490 · Application No. 202511055868</p>
+      </div>
+
+      <div class="achieve-card card">
+        <span class="achieve-icon">✎</span>
+        <h3>Peer Reviewer</h3>
+        <p>Reviewed manuscripts for reputed journals including <em>BMC Biology</em>.</p>
+      </div>
+
+      <div class="achieve-card card">
+        <span class="achieve-icon">◆</span>
+        <h3>Oral Presentation</h3>
+        <p>"Unravelling the morphological and nutritional diversity in pigmented rices of Western Himalayan region" — Dept. of Botany, University of Kashmir (NASI), 2024.</p>
+      </div>
+
+      <div class="achieve-card card">
+        <span class="achieve-icon">◆</span>
+        <h3>Poster Presentation</h3>
+        <p>"Variation for agronomic and quantitative traits in exotic oats" — ISGPB, SKUAST-Kashmir, 2022.</p>
+      </div>
+
+    </div>
+
+    <h3 class="sub-heading">Selected Workshops &amp; Trainings</h3>
+    <div class="workshop-list">
+      <div class="workshop-row">
+        <span class="workshop-date">Jul 2025</span>
+        <span class="workshop-title">International Workshop — OMICS for Crop Improvement</span>
+        <span class="workshop-org">SKUAST-K Proteomics Lab × Neuberg Diagnostics</span>
+      </div>
+      <div class="workshop-row">
+        <span class="workshop-date">Jul 2024</span>
+        <span class="workshop-title">International Workshop — OMICS in Plant Science</span>
+        <span class="workshop-org">Organizing Committee Member, SKUAST-K</span>
+      </div>
+      <div class="workshop-row">
+        <span class="workshop-date">Mar 2023</span>
+        <span class="workshop-title">Root Scanning &amp; Non-Destructive Proteomics for Abiotic Stress</span>
+        <span class="workshop-org">Faculty of Agriculture, Wadura, SKUAST-K</span>
+      </div>
+      <div class="workshop-row">
+        <span class="workshop-date">2020–2022</span>
+        <span class="workshop-title">Ecological Entrepreneurship · Mushroom Production · In-vitro Saffron Cormlets</span>
+        <span class="workshop-org">SKUAST-Kashmir / SAMETI-K</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CONTACT ===== -->
+<section class="section section-contact" id="contact">
+  <canvas class="contact-canvas" id="contactPlot" aria-hidden="true"></canvas>
+  <div class="container">
+    <p class="eyebrow eyebrow-light"><span class="locus-tag">LOCUS&nbsp;08</span> Contact</p>
+    <h2 class="section-title section-title-light">Let's talk research.</h2>
+    <p class="section-lede section-lede-light">Open to postdoctoral positions, collaborations, and consulting work in genomics, biostatistics, and plant breeding.</p>
+
+    <div class="contact-grid">
+      <a class="contact-card" href="mailto:zafirahmad198@gmail.com" id="emailCard">
+        <span class="contact-card-label">Email</span>
+        <span class="contact-card-value">zafirahmad198@gmail.com</span>
+        <span class="copy-hint">Click to copy</span>
+      </a>
+      <a class="contact-card" href="tel:+917006087884">
+        <span class="contact-card-label">Phone</span>
+        <span class="contact-card-value">+91 70060 87884</span>
+      </a>
+      <div class="contact-card contact-card-static">
+        <span class="contact-card-label">Location</span>
+        <span class="contact-card-value">Srinagar, J&amp;K, India</span>
+      </div>
+      <a class="contact-card" href="https://www.linkedin.com/in/zafir-naik/" target="_blank" rel="noopener">
+        <span class="contact-card-label">LinkedIn</span>
+        <span class="contact-card-value">/in/zafir-naik</span>
+      </a>
+      <a class="contact-card" href="https://scholar.google.com/citations?user=VuIrALwAAAAJ&hl=en&authuser=1" target="_blank" rel="noopener">
+        <span class="contact-card-label">Google Scholar</span>
+        <span class="contact-card-value">View citations →</span>
+      </a>
+      <a class="contact-card" href="https://github.com/zaff198" target="_blank" rel="noopener">
+        <span class="contact-card-label">GitHub</span>
+        <span class="contact-card-value">@zaff198</span>
+      </a>
+    </div>
+
+    <div class="cv-download">
+      <a href="cv/Zafir_Ahmad_Naik_CV.pdf" download class="btn btn-light">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12m0 0l-4-4m4 4l4-4M5 19h14"/></svg>
+        Download Full CV (PDF)
+      </a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <p>© <span id="year"></span> Zafir Ahmad Naik. Built with HTML, CSS &amp; vanilla JS.</p>
+    <a href="#home" class="back-to-top" id="backToTop" aria-label="Back to top">↑</a>
+  </div>
+</footer>
+
+<div class="toast" id="toast">Email copied to clipboard</div>
+
+<script src="script.js"></script>
 </body>
 </html>
