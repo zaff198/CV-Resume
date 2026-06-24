@@ -1,5 +1,5 @@
 /* =========================================================
-   ZAFIR AHMAD NAIK — ACADEMIC PORTFOLIO — script.js
+   Dr ZAFIR AHMAD NAIK — ACADEMIC PORTFOLIO — script.js
    Vanilla JS: nav, scroll progress, reveal animations,
    count-up stats, publication filters, copy-to-clipboard,
    and the hero/contact "Manhattan plot" canvas signature.
